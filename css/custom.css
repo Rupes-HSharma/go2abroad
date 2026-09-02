@@ -85,7 +85,7 @@ Sidebar heading     :  24px/32px, 600, "Plus Jakarta Sans", sans-serif (Heading 
 ================================== */
 
 :root {
-	--main-color: #006E93;
+	--main-color: #4FA8DC;
 	--primary-color: #15202B;
 	--secondary-color: #F1F5F9;
 	--text-color: #64748B;
@@ -1377,7 +1377,7 @@ i::before {
 .hero-slider-layout .hero-slide {
 	position: relative;
 	padding-bottom: 0px;
-	min-height: 770px;
+	min-height: 650px;
 	display: flex;
 	justify-content: center;
 	align-items: end;
@@ -1391,7 +1391,8 @@ i::before {
 
 .home-page .hero-slider-layout {
 	background-color: transparent;
-	background-image: linear-gradient(170deg, #2563EB33 0%, var(--secondary-color) 100%);
+	/*background-image: linear-gradient(170deg, #2563EB33 0%, var(--secondary-color) 100%);*/
+	background-image:linear-gradient(170deg, #F3F8FC 0%, #A5BADA 100%);
 }
 
 .home-page .hero-slider-layout .sisf-sis-bottom-right-image {
@@ -4977,7 +4978,7 @@ ease-in-out;
 	}
 
 	.sis-btn-default {
-		padding: 3px 3px 3px 15px;
+		padding: 3px 15px 3px 15px;
 	}
 
 	.sis-header-top {
@@ -6467,4 +6468,62 @@ ease-in-out;
     margin-left: -9px;
 }
 
+
+/*==============Gradiend Css ===========================*/
+/* ==========================================================
+   Go2Abroad — Gradient Style Sheet
+   Apply the relevant class (or copy the background rule)
+   to each section as noted.
+   ========================================================== */
+
+/* 1. HERO SECTION BACKGROUND
+   Light, welcoming — Cloud White -> Soft Credential Blue */
+.hero-section {
+  background: linear-gradient(135deg, #F3F8FC 0%, #A5BADA 100%);
+}
+
+/* 2. PRIMARY CTA BUTTONS
+   ("Study In Australia", "Book Free Consulting", "Explore Our Portfolio") */
+.btn-primary {
+  background: linear-gradient(90deg, #184FA3 0%, #4FA8DC 100%);
+}
+
+/* 3. STAT / BADGE OVERLAYS
+   (photo badges like "25K+ Applications", "98% Success Rate") */
+.stat-badge {
+  background: linear-gradient(180deg, #013E53 0%, #15202B 100%);
+}
+
+/* 4. DARK TRUST SECTION
+   ("Why Thousands Trust..." full dark band) */
+.trust-section {
+  background: linear-gradient(135deg, #013E53 0%, #15202B 100%);
+}
+
+/* 5. ICON CIRCLES / SERVICE CARD ICONS
+   (radial, center to edge) */
+.icon-circle {
+  background: radial-gradient(circle, #006E93 0%, #4FA8DC 100%);
+}
+
+/* 6. FOOTER */
+.site-footer {
+  background: linear-gradient(180deg, #15202B 0%, #013E53 100%);
+}
+
+/* 7. FOUNDER GOLD ACCENTS
+   Keep solid — do NOT gradient this one, max ~10% usage
+   (badges, award icons, underline accents only) */
+.accent-gold {
+  background: #B7923E; /* solid, not a gradient */
+}
+
+.main-footer .swiper-wrapper img {
+    height: 49px;
+    border-radius: 50%;
+    width: 49px;
+}
+ .main-footer .sisf-page-location-ist-item .sis-e-inner {
  
+    border-radius: 4px !important;
+}
