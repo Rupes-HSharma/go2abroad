@@ -124,7 +124,7 @@
         }, { offset: '50%' });
     }
 
-     // GSAP Reveal & Text Animations
+ 
     if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
         gsap.registerPlugin(ScrollTrigger);
 
