@@ -1,88 +1,4 @@
-/* ----------------------------------------------------------------------------------------
-* Author        : Siddhi Infosoft
-* Template Name : Vistara - Immigration And Visa Consulting - HTML Template
-* File          : CSS File
-* Version       : 1.0
-* ---------------------------------------------------------------------------------------- */
-/* INDEX
-----------------------------------------------------------------------------------------
-01. Global Variables
-02. General css
-03. Header css
-04. Hero css
-05. Scroll Content Section Css
-06. About Us Section css
-07. Services Section Css
-08. What We Offer Section Css
-09. How It Works Section Css
-10. Why Choose Us Section Css
-11. Success Stories Section Css
-12. Country List Section Css
-13. Testimonial Section Css
-14. FAQ Section css
-15. Contact Section Css
-16. Letest Blog Section Css
-17. Video Section css
-18. Inner Pages Banner Css
-19. Team Members Section Css
-20. Blog Page Css
-21. Blog Single css
-22. Page Sidebar Css
-23. Service Detail Page Css
-24. Team Detail Page Css
-25. Landing Page css
-26. Footer Css
-27. Responsive css
-
--------------------------------------------------------------------------------------- */
-/*------------------------------------------------------------------
-[Table of contents]
-
-1. Body
-2. Header / #sisf-page-header
-3. Navigation / .navbar
-4. Page Sidebar / .sisf-page-sidebar
-5. Div Section  / .section
-6. Blog Section / .sis-blog-item
-7. logo  / .sis-logo-section, .sis-logo-slider
-8. Gallery / .sis-gallery-items
-9. Team / .sisf-sis-team-member
-10. Testimonioal / .sis-testimonioal-section
-11. Footer / .main-footer
--------------------------------------------------------------------*/
-
-/*------------------------------------------------------------------
-[Color codes]
-
-Background: #F1F5F9 ("Alice Blue")
-Content:    #64748B (Slate Gray)
-Header h1:  #FFFFFF (White)
-Header h2:  #0F172A (Dark Olive Green)
-Footer:     #FFFFFF (White)
-
-Main Color :  #2563EB ("Bright Blue")
-Secondary Color : #F1F5F9 ("Alice Blue")
-Text White:   #FFFFFF (White)
-Text Dark :   #0F172A (Dark Slate Blue)
-a (standard): #0F172A
-a (active):   #2563EB
--------------------------------------------------------------------*/
-
-/*------------------------------------------------------------------
-[Typography]
-
-Body copy           :  16px/26px, 500, "Plus Jakarta Sans", sans-serif (Default Font)
-Heading h1          :  64px/80px, 900, "Plus Jakarta Sans", sans-serif (Heading Font)
-Heading h2          :  48px/58px, 700, "Plus Jakarta Sans", sans-serif (Heading Font)
-Section SubTitle h3 :  24px/32px, 700, "Plus Jakarta Sans", sans-serif (Heading Font)
-Input, textarea     :  16px, "Plus Jakarta Sans", sans-serif (Default Font)
-Sidebar heading     :  24px/32px, 600, "Plus Jakarta Sans", sans-serif (Heading Font)
-
--------------------------------------------------------------------------------------- */
-
-/* ===============================
-     	 01. Global Variables	  
-================================== */
+ 
 
 :root {
 	--main-color: #4FA8DC;
@@ -6469,33 +6385,23 @@ ease-in-out;
 }
 
 
-/*==============Gradiend Css ===========================*/
-/* ==========================================================
-   Go2Abroad — Gradient Style Sheet
-   Apply the relevant class (or copy the background rule)
-   to each section as noted.
-   ========================================================== */
+ 
 
-/* 1. HERO SECTION BACKGROUND
-   Light, welcoming — Cloud White -> Soft Credential Blue */
+ 
 .hero-section {
   background: linear-gradient(135deg, #F3F8FC 0%, #A5BADA 100%);
 }
 
-/* 2. PRIMARY CTA BUTTONS
-   ("Study In Australia", "Book Free Consulting", "Explore Our Portfolio") */
+ 
 .btn-primary {
   background: linear-gradient(90deg, #184FA3 0%, #4FA8DC 100%);
 }
 
-/* 3. STAT / BADGE OVERLAYS
-   (photo badges like "25K+ Applications", "98% Success Rate") */
+ 
 .stat-badge {
   background: linear-gradient(180deg, #013E53 0%, #15202B 100%);
 }
-
-/* 4. DARK TRUST SECTION
-   ("Why Thousands Trust..." full dark band) */
+ 
 .trust-section {
   background: linear-gradient(135deg, #013E53 0%, #15202B 100%);
 }
@@ -6511,9 +6417,7 @@ ease-in-out;
   background: linear-gradient(180deg, #15202B 0%, #013E53 100%);
 }
 
-/* 7. FOUNDER GOLD ACCENTS
-   Keep solid — do NOT gradient this one, max ~10% usage
-   (badges, award icons, underline accents only) */
+ 
 .accent-gold {
   background: #B7923E; /* solid, not a gradient */
 }
