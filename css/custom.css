@@ -1053,8 +1053,8 @@ i::before {
 	padding: 3px 0px 3px 0px !important;
 	transition: all 0.6s ease;
 	font-family: var(--default-font);
-	font-size: 16px;
-	line-height: 26px;
+	font-size: 13px;
+    line-height: 18px;
 	font-weight: 600;
 	letter-spacing: normal;
 	text-transform: none !important;
@@ -6430,4 +6430,564 @@ ease-in-out;
  .main-footer .sisf-page-location-ist-item .sis-e-inner {
  
     border-radius: 4px !important;
+}
+
+
+
+
+
+
+ /* =========================================
+   GO2ABROAD
+   OFFICE LOCATION SECTION
+========================================= */
+
+.sis-contact-location {
+    width: 100%;
+    padding-bottom: 70px;
+}
+
+
+/* =========================================
+   MAIN LOCATION CARD
+========================================= */
+
+.sis-location-card {
+
+    display: grid;
+
+    grid-template-columns: 0.85fr 1.5fr;
+
+    min-height: 400px;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(15, 23, 42, 0.04);
+
+    border-radius: 22px;
+
+    padding: 8px;
+
+    box-shadow:
+        0 10px 40px rgba(15, 23, 42, 0.07);
+}
+
+
+/* =========================================
+   LEFT DETAILS
+========================================= */
+
+.sis-location-details {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 0px 30px 30px;
+
+    min-width: 0;
+}
+
+
+/* =========================================
+   OFFICE TABS
+========================================= */
+
+.sis-location-tabs {
+
+    display: flex;
+
+    align-items: stretch;
+
+    gap: 6px;
+
+    width: 100%;
+
+    margin-bottom: 35px;
+
+    padding: 5px;
+
+    background: #f5f7fb;
+
+    border-radius: 13px;
+}
+
+
+/* =========================================
+   TAB
+========================================= */
+
+.sis-location-tab {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 9px 10px;
+
+    border: 0;
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: #667085;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.sis-location-tab:hover {
+
+    background: #ffffff;
+
+}
+
+
+.sis-location-tab.active {
+
+    background: #15202B;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 5px 15px rgba(39, 110, 241, 0.20);
+
+}
+
+
+/* =========================================
+   TAB ICON
+========================================= */
+
+.sis-tab-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 34px;
+
+    height: 34px;
+
+    min-width: 34px;
+
+    border-radius: 9px;
+
+    background: #eef3fa;
+
+    color: #276ef1;
+
+    font-size: 14px;
+
+}
+
+
+.sis-location-tab.active .sis-tab-icon {
+
+    background: rgba(255, 255, 255, 0.16);
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================
+   TAB CONTENT
+========================================= */
+
+.sis-tab-content {
+
+    display: block;
+
+    min-width: 0;
+
+}
+
+
+.sis-location-tab strong {
+
+    display: block;
+
+    margin: 0;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    white-space: nowrap;
+
+}
+
+
+.sis-location-tab small {
+
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 10px;
+
+    line-height: 1.2;
+
+    opacity: 0.70;
+
+}
+
+
+/* =========================================
+   INFORMATION ITEM
+========================================= */
+
+.sis-location-info {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* =========================================
+   INFORMATION ICON
+========================================= */
+
+.sis-info-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 38px;
+
+    height: 38px;
+
+    min-width: 38px;
+
+    border-radius: 10px;
+
+    background: #f3f7ff;
+
+    color: #276ef1;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================
+   INFORMATION CONTENT
+========================================= */
+
+.sis-info-content {
+
+    min-width: 0;
+
+    padding-top: 1px;
+
+}
+
+
+.sis-location-info span {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #98a2b3;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    line-height: 1.2;
+
+    letter-spacing: 0.5px;
+
+    text-transform: uppercase;
+
+}
+
+
+.sis-location-info p {
+
+    margin: 0;
+
+    color: #344054;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================
+   GET DIRECTIONS BUTTON
+========================================= */
+
+.sis-direction-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    width: fit-content;
+
+    margin-top: 5px;
+
+    padding: 12px 18px;
+
+    border: 0;
+
+    border-radius: 10px;
+
+    background: #4FA8DC;
+
+    color: #ffffff !important;
+
+    text-decoration: none !important;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+
+}
+
+
+.sis-direction-btn:hover {
+
+    transform: translateY(-2px);
+
+    background: #1f63df;
+
+    color: #ffffff !important;
+
+    box-shadow:
+        0 8px 20px rgba(39, 110, 241, 0.22);
+
+}
+
+
+/* =========================================
+   MAP
+========================================= */
+
+.sis-location-map {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 400px;
+
+    overflow: hidden;
+
+    border-radius: 17px;
+
+    background: #e5e7eb;
+
+}
+
+
+.sis-location-map iframe {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 400px;
+
+    border: 0;
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1199px) {
+
+    .sis-location-card {
+
+        grid-template-columns: 0.9fr 1.4fr;
+
+    }
+
+    .sis-location-details {
+
+        padding-left: 28px;
+
+        padding-right: 28px;
+
+    }
+
+}
+
+
+/* =========================================
+   TABLET / MOBILE
+========================================= */
+
+@media (max-width: 991px) {
+
+    .sis-location-card {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .sis-location-details {
+
+        padding: 30px;
+
+    }
+
+
+    .sis-location-map {
+
+        min-height: 380px;
+
+    }
+
+
+    .sis-location-map iframe {
+
+        min-height: 380px;
+
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 575px) {
+
+    .sis-contact-location {
+
+        padding-bottom: 50px;
+
+    }
+
+
+    .sis-location-card {
+
+        padding: 5px;
+
+        border-radius: 17px;
+
+    }
+
+
+    .sis-location-details {
+
+        padding: 22px 18px 25px;
+
+    }
+
+
+    .sis-location-tabs {
+
+        gap: 5px;
+
+        margin-bottom: 28px;
+
+        padding: 4px;
+
+        overflow-x: auto;
+
+    }
+
+
+    .sis-location-tab {
+
+        flex: 0 0 160px;
+
+        padding: 8px;
+
+    }
+
+
+    .sis-tab-icon {
+
+        width: 32px;
+
+        height: 32px;
+
+        min-width: 32px;
+
+    }
+
+
+    .sis-location-map {
+
+        min-height: 320px;
+
+        border-radius: 13px;
+
+    }
+
+
+    .sis-location-map iframe {
+
+        min-height: 320px;
+
+    }
+
+}
+
+.footerlogo img{
+	    width: 86px;
+    border-radius: 3px;
+    padding: 5px;
+    background: #fff;
 }
