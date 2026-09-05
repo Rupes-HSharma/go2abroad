@@ -1387,7 +1387,7 @@ i::before {
 }
 
 .sisf-hero-content-right .sisf-hero-image-right {
-	margin: 0 -50px 0 -200px;
+	margin: 0 -50px 0 -253px;
 }
 
 .sisf-content-center.sis-e-page-inner {
@@ -6990,4 +6990,23 @@ ease-in-out;
     border-radius: 3px;
     padding: 5px;
     background: #fff;
+}
+
+
+/*====================================*/
+.sis-step-item{
+  opacity:0;
+  transform:translateY(24px) translateX(-50%);
+  transition:opacity .6s ease, transform .6s ease;
+}
+.sis-journey-wrap.in-view .sis-step-item{
+  opacity:1;
+  transform:translateY(0) translateX(-50%);
+}
+#sis-journey-path{
+  stroke-dashoffset: var(--path-len, 1000);
+  transition:stroke-dashoffset 1.6s ease .2s;
+}
+.sis-journey-wrap.in-view #sis-journey-path{
+  stroke-dashoffset: 0;
 }
