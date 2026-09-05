@@ -566,4 +566,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 });
+
+
+ (function(){
+  var wrap = document.querySelector('.sis-journey-wrap');
+  var path = document.getElementById('sis-journey-path');
+  if(!wrap || !path) return;
+
+  var len = path.getTotalLength();
+  path.style.strokeDasharray = len;
+  wrap.style.setProperty('--path-len', len);
+
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        wrap.classList.add('in-view');
+      } else {
+        wrap.classList.remove('in-view');
+      }
+    });
+  }, { threshold: 0.25 });
+
+  observer.observe(wrap);
+})();
  
