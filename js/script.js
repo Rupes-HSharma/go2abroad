@@ -342,3 +342,228 @@
         });
     }
 })(jQuery);
+
+ /* =========================================
+   GO2ABROAD
+   OFFICE LOCATION TAB SCRIPT
+========================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    /* =====================================
+       OFFICE DATA
+    ====================================== */
+
+    const locations = {
+
+
+        /* =================================
+           HEAD OFFICE - FARIDABAD
+        ================================== */
+
+        headOffice: {
+
+            address:
+                "B-395, 2nd Floor, Nehru Ground, Neelam Chowk, Faridabad, Haryana - 121001",
+
+            phone:
+                "+91-7905377279",
+
+            email:
+                "info@go2abroad.co",
+
+            map:
+                "https://www.google.com/maps?q=B-395%2C%202nd%20Floor%2C%20Nehru%20Ground%2C%20Neelam%20Chowk%2C%20Faridabad%2C%20Haryana%20121001&output=embed",
+
+            direction:
+                "https://www.google.com/maps/search/?api=1&query=B-395%2C+2nd+Floor%2C+Nehru+Ground%2C+Neelam+Chowk%2C+Faridabad%2C+Haryana+121001"
+
+        },
+
+
+        /* =================================
+           BRANCH OFFICE - PANIPAT
+        ================================== */
+
+        branchOffice: {
+
+            address:
+                "SCO-223, Sector 13-17 Main Road, HUDA, Panipat, Haryana - 132104",
+
+            phone:
+                "+91-7905377279",
+
+            email:
+                "info@go2abroad.co",
+
+            map:
+                "https://www.google.com/maps?q=SCO-223%2C%20Sector%2013-17%20Main%20Road%2C%20HUDA%2C%20Panipat%2C%20Haryana%20132104&output=embed",
+
+            direction:
+                "https://www.google.com/maps/search/?api=1&query=SCO-223%2C+Sector+13-17+Main+Road%2C+HUDA%2C+Panipat%2C+Haryana+132104"
+
+        }
+
+    };
+
+
+    /* =====================================
+       ELEMENTS
+    ====================================== */
+
+    const tabs =
+        document.querySelectorAll(
+            ".sis-location-tab"
+        );
+
+
+    const officeAddress =
+        document.getElementById(
+            "officeAddress"
+        );
+
+
+    const officePhone =
+        document.getElementById(
+            "officePhone"
+        );
+
+
+    const officeEmail =
+        document.getElementById(
+            "officeEmail"
+        );
+
+
+    const officeMap =
+        document.getElementById(
+            "officeMap"
+        );
+
+
+    const directionBtn =
+        document.getElementById(
+            "directionBtn"
+        );
+
+
+    /* =====================================
+       CHANGE OFFICE
+    ====================================== */
+
+    function changeLocation(locationName) {
+
+        const location =
+            locations[locationName];
+
+
+        if (!location) {
+            return;
+        }
+
+
+        /* =================================
+           UPDATE ADDRESS
+        ================================== */
+
+        officeAddress.textContent =
+            location.address;
+
+
+        /* =================================
+           UPDATE PHONE
+        ================================== */
+
+        officePhone.textContent =
+            location.phone;
+
+
+        /* =================================
+           UPDATE EMAIL
+        ================================== */
+
+        officeEmail.textContent =
+            location.email;
+
+
+        /* =================================
+           UPDATE MAP
+        ================================== */
+
+        if (officeMap && location.map) {
+
+            officeMap.src =
+                location.map;
+
+        }
+
+
+        /* =================================
+           UPDATE DIRECTION BUTTON
+        ================================== */
+
+        if (directionBtn && location.direction) {
+
+            directionBtn.href =
+                location.direction;
+
+        }
+
+
+        /* =================================
+           UPDATE ACTIVE TAB
+        ================================== */
+
+        tabs.forEach(function (tab) {
+
+            tab.classList.remove("active");
+
+        });
+
+
+        const activeTab =
+            document.querySelector(
+                '[data-location="' +
+                locationName +
+                '"]'
+            );
+
+
+        if (activeTab) {
+
+            activeTab.classList.add("active");
+
+        }
+
+    }
+
+
+    /* =====================================
+       TAB CLICK
+    ====================================== */
+
+    tabs.forEach(function (tab) {
+
+        tab.addEventListener(
+            "click",
+            function () {
+
+                const locationName =
+                    this.getAttribute(
+                        "data-location"
+                    );
+
+
+                changeLocation(
+                    locationName
+                );
+
+            }
+        );
+
+    });
+
+
+});
+ 
