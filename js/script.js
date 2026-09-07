@@ -568,7 +568,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
- (function(){
+(function(){
   var wrap = document.querySelector('.sis-journey-wrap');
   var path = document.getElementById('sis-journey-path');
   if(!wrap || !path) return;
