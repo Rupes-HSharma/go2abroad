@@ -6,6 +6,7 @@
 	--secondary-color: #F1F5F9;
 	--text-color: #55627A;
 	--white-color: #FFFFFF;
+	--transparent-color: #0000004d;
 	--error-color: rgb(230, 87, 87);
 	--default-font: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 	--heading-font: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -49,8 +50,8 @@ h6 {
 
 h3,
 .sis-comman-title {
-	font-size: 24px !important;
-	line-height: 32px;
+	font-size: 15px !important;
+    line-height: 24px;
 	font-weight: 700;
 	letter-spacing: 0px;
 	text-transform: none;
@@ -1604,7 +1605,7 @@ i::before {
 
 .sisf-sis-e-service-list .sisf-e-inner .sisf-e-content {
 	transition: all 0.6s ease;
-	background-color: var(--white-color) !important;
+	background-color: var(--transparent-color) !important;
 	position: absolute;
     left: 0;
     bottom: 0;
@@ -1617,10 +1618,10 @@ i::before {
 
 .sisf-sis-e-service-list .sisf-e-content h3 a,
 .sisf-sis-e-service-list .sisf-e-content h2 a {
-	color: var(--primary-color);
+	color: var(--white-color);
 	transition: all 0.6s ease;
 }
-
+.sisf-sis-e-service-list .sisf-page-text-line{color:#fff;}
 .sisf-sis-e-service-list .sisf-e-content p {
     transition: all 0.6s ease;
 }
@@ -2162,8 +2163,8 @@ i::before {
 	box-shadow: none;
 	outline: none;
     text-transform: none;
-    line-height: 32px;
-	font-size: 20px;
+    line-height: 8px;
+	font-size: 17px;
 	font-family: var(--default-font);
     padding: 25px 0px 25px 0px;
 	border: none;
@@ -2385,6 +2386,7 @@ i::before {
 .sisf-page-bottom .accordion-item {
 	border-bottom: 1px solid #00000026;
 	border-radius: 0px !important;
+	    padding-left: 22px;
 }
 
 .sis-e-faqs-image img {
@@ -7023,10 +7025,10 @@ ease-in-out;
 
 
 /*====================================*/
-.sis-step-item{
+  .sis-step-item{
   opacity:0;
   transform:translateY(24px) translateX(-50%);
-  transition:opacity .6s ease, transform .6s ease;
+  transition:opacity 1s ease, transform 1s ease;
 }
 .sis-journey-wrap.in-view .sis-step-item{
   opacity:1;
@@ -7034,10 +7036,20 @@ ease-in-out;
 }
 #sis-journey-path{
   stroke-dashoffset: var(--path-len, 1000);
-  transition:stroke-dashoffset 1.6s ease .2s;
+  transition:stroke-dashoffset 2.5s ease .2s;
 }
 .sis-journey-wrap.in-view #sis-journey-path{
   stroke-dashoffset: 0;
+}
+
+/* Hamesha chalne wala blink, har circle apne turn pe */
+@keyframes sis-pulse-glow{
+  0%   { box-shadow:0 0 0 0 #4CAF50; }
+  70%  { box-shadow: 0 0 0 20px rgba(0,110,147,0); }
+  100% { box-shadow: 0 0 0 0 rgba(0,110,147,0); }
+}
+.sis-step-icon.sis-pulse-loop{
+  animation: sis-pulse-glow 3s infinite;
 }
 
 /* =====================================================================
@@ -7328,9 +7340,11 @@ ease-in-out;
 	flex: 0 0 auto;
 }
 .sis-country-card .sis-country-flag img{
-	width: 100%;
-	height: 100%;
-	object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border: 1px solid #dedede;
+    border-radius: 50%;
 }
 .sis-country-card h3{
 	font-size: 18px !important;
@@ -7986,6 +8000,7 @@ html{
 
 .aboutService .sisf-e-content {
     height: 145px;
+
 }
 .aboutService .sisf-sis-e-service-list .sisf-service-image img {
     height: 330px;
@@ -7994,3 +8009,616 @@ html{
 .footer-links ul li{
    color:#fff;
 }
+
+
+
+
+
+/* =====================================================
+   GO2ABROAD TEAM POPUP
+===================================================== */
+
+#go2TeamPopup {
+
+    position: fixed !important;
+
+    top: 0 !important;
+    left: 0 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+
+    z-index: 2147483647 !important;
+
+    display: none !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    padding: 25px !important;
+
+    box-sizing: border-box !important;
+
+}
+
+
+#go2TeamPopup.go2-team-open {
+
+    display: flex !important;
+
+}
+
+
+/* =====================================================
+   OVERLAY
+===================================================== */
+
+#go2TeamPopup .go2TeamPopupOverlay {
+
+    position: fixed !important;
+
+    top: 0 !important;
+    left: 0 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+
+    background: rgba(8, 20, 32, 0.92) !important;
+
+    backdrop-filter: blur(8px);
+
+    -webkit-backdrop-filter: blur(8px);
+
+}
+
+
+/* =====================================================
+   POPUP BOX
+===================================================== */
+
+#go2TeamPopup .go2TeamPopupBox {
+
+    position: relative !important;
+
+    z-index: 2 !important;
+
+    width: min(1100px, 100%) !important;
+
+    height: min(650px, 90vh) !important;
+
+    display: grid !important;
+
+    grid-template-columns: 42% 58% !important;
+
+    overflow: hidden !important;
+
+    background: #142331 !important;
+
+    border: 1px solid rgba(78, 171, 224, 0.35) !important;
+
+    border-radius: 24px !important;
+
+    box-shadow:
+        0 30px 100px rgba(0, 0, 0, 0.60) !important;
+
+    animation: go2TeamPopupIn 0.3s ease !important;
+
+}
+
+
+@keyframes go2TeamPopupIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(0.96);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* =====================================================
+   LEFT IMAGE
+===================================================== */
+
+#go2TeamPopup .go2TeamPopupImage {
+
+    width: 100% !important;
+
+    height: 100% !important;
+
+    min-height: 0 !important;
+
+    overflow: hidden !important;
+
+    background: #172838 !important;
+
+}
+
+
+#go2TeamPopup .go2TeamPopupImage img {
+
+    width: 100% !important;
+
+    height: 100% !important;
+
+    display: block !important;
+
+    object-fit: cover !important;
+
+    object-position: center !important;
+
+}
+
+
+/* =====================================================
+   RIGHT CONTENT
+===================================================== */
+
+#go2TeamPopup .go2TeamPopupContent {
+
+    height: 100% !important;
+
+    min-width: 0 !important;
+
+    box-sizing: border-box !important;
+
+    padding: 20px !important;
+
+    overflow-y: auto !important;
+    text-align: justify;
+    color: #ffffff !important;
+
+}
+
+
+/* =====================================================
+   TAG
+===================================================== */
+
+#go2TeamPopup .go2TeamPopupTag {
+
+    display: inline-block !important;
+
+    padding: 8px 16px !important;
+
+    margin-bottom: 18px !important;
+
+    background: #ffffff !important;
+
+    color: #4eabe0 !important;
+
+    border-radius: 50px !important;
+
+    font-size: 11px !important;
+
+    font-weight: 700 !important;
+
+    letter-spacing: 1px !important;
+
+    text-transform: uppercase !important;
+
+}
+
+
+/* =====================================================
+   NAME
+===================================================== */
+
+#go2TeamPopup .go2TeamPopupContent h2 {
+
+    margin: 0 0 7px !important;
+
+    padding: 0 !important;
+
+    color: #ffffff !important;
+
+    font-size: 42px !important;
+
+    line-height: 1.15 !important;
+
+    font-weight: 700 !important;
+
+}
+
+
+/* =====================================================
+   ROLE
+===================================================== */
+
+#go2TeamPopup .go2TeamPopupRole {
+
+    color: #52afe0 !important;
+
+    font-size: 17px !important;
+
+    line-height: 1.5 !important;
+
+    font-weight: 600 !important;
+
+}
+
+
+/* =====================================================
+   DIVIDER
+===================================================== */
+
+#go2TeamPopup .go2TeamPopupDivider {
+
+    width: 65px !important;
+
+    height: 3px !important;
+
+    margin: 25px 0 !important;
+
+    background: #4eabe0 !important;
+
+    border-radius: 10px !important;
+
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+#go2TeamPopup .go2TeamPopupContent h3 {
+
+    margin: 0 0 18px !important;
+
+    padding: 0 !important;
+
+    color: #ffffff !important;
+
+    font-size: 24px !important;
+
+    line-height: 1.35 !important;
+
+    font-weight: 700 !important;
+
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+#go2TeamPopup .go2TeamPopupDescription {
+
+    color: rgba(255, 255, 255, 0.78) !important;
+
+    font-size: 15px !important;
+
+    line-height: 1.8 !important;
+
+}
+
+
+#go2TeamPopup .go2TeamPopupDescription p {
+
+    margin: 0 0 16px !important;
+
+}
+
+
+#go2TeamPopup .go2TeamPopupDescription strong {
+
+    color: #ffffff !important;
+
+}
+
+
+/* =====================================================
+   SOCIAL
+===================================================== */
+
+#go2TeamPopup .go2TeamPopupSocial {
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    gap: 10px !important;
+
+    margin-top: 25px !important;
+
+}
+
+
+#go2TeamPopup .go2TeamPopupSocial a {
+
+    width: 40px !important;
+
+    height: 40px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    border-radius: 50% !important;
+
+    background: rgba(255,255,255,0.10) !important;
+
+    color: #ffffff !important;
+
+    text-decoration: none !important;
+
+    transition: all .25s ease !important;
+
+}
+
+
+#go2TeamPopup .go2TeamPopupSocial a:hover {
+
+    background: #4eabe0 !important;
+
+    transform: translateY(-3px) !important;
+
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+#go2TeamPopup .go2TeamPopupButton {
+
+    display: inline-flex !important;
+
+    align-items: center !important;
+
+    gap: 10px !important;
+
+    margin-top: 27px !important;
+
+    padding: 14px 22px !important;
+
+    background: #4eabe0 !important;
+
+    color: #ffffff !important;
+
+    border-radius: 50px !important;
+
+    text-decoration: none !important;
+
+    font-size: 14px !important;
+
+    font-weight: 700 !important;
+
+    transition: all .25s ease !important;
+
+}
+
+
+#go2TeamPopup .go2TeamPopupButton:hover {
+
+    background: #ffffff !important;
+
+    color: #142331 !important;
+
+}
+
+
+/* =====================================================
+   CLOSE BUTTON
+===================================================== */
+
+#go2TeamPopup .go2TeamPopupClose {
+
+    position: absolute !important;
+
+    top: 15px !important;
+
+    right: 15px !important;
+
+    z-index: 20 !important;
+
+    width: 42px !important;
+
+    height: 42px !important;
+
+    padding: 0 !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    border: 0 !important;
+
+    border-radius: 50% !important;
+
+    background: #ffffff !important;
+
+    color: #142331 !important;
+
+    cursor: pointer !important;
+
+    font-size: 17px !important;
+
+}
+
+
+#go2TeamPopup .go2TeamPopupClose:hover {
+
+    background: #4eabe0 !important;
+
+    color: #ffffff !important;
+
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+body.go2-team-popup-open {
+
+    overflow: hidden !important;
+
+}
+
+
+/* =====================================================
+   TEAM CARD CURSOR
+===================================================== */
+
+.sisf-sis-team-member {
+
+    cursor: pointer !important;
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 991px) {
+
+    #go2TeamPopup {
+
+        padding: 15px !important;
+
+    }
+
+
+    #go2TeamPopup .go2TeamPopupBox {
+
+        width: 100% !important;
+
+        height: 92vh !important;
+
+        max-height: 92vh !important;
+
+        grid-template-columns: 1fr !important;
+
+        overflow-y: auto !important;
+
+    }
+
+
+    #go2TeamPopup .go2TeamPopupImage {
+
+        height: 350px !important;
+
+        min-height: 350px !important;
+
+    }
+
+
+    #go2TeamPopup .go2TeamPopupContent {
+
+        height: auto !important;
+
+        padding: 40px !important;
+
+        overflow: visible !important;
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 575px) {
+
+    #go2TeamPopup {
+
+        padding: 8px !important;
+
+    }
+
+
+    #go2TeamPopup .go2TeamPopupBox {
+
+        height: 94vh !important;
+
+        max-height: 94vh !important;
+
+        border-radius: 18px !important;
+
+    }
+
+
+    #go2TeamPopup .go2TeamPopupImage {
+
+        height: 260px !important;
+
+        min-height: 260px !important;
+
+    }
+
+
+    #go2TeamPopup .go2TeamPopupContent {
+
+        padding: 30px 22px 35px !important;
+
+    }
+
+
+    #go2TeamPopup .go2TeamPopupContent h2 {
+
+        font-size: 29px !important;
+
+    }
+
+
+    #go2TeamPopup .go2TeamPopupContent h3 {
+
+        font-size: 21px !important;
+
+    }
+
+
+    #go2TeamPopup .go2TeamPopupDescription {
+
+        font-size: 14px !important;
+
+    }
+
+
+    #go2TeamPopup .go2TeamPopupClose {
+
+        width: 38px !important;
+
+        height: 38px !important;
+
+        top: 10px !important;
+
+        right: 10px !important;
+
+    }
+
+
+    #go2TeamPopup .go2TeamPopupButton {
+
+        width: 100% !important;
+
+        justify-content: center !important;
+
+    }
+
+}
+
+
