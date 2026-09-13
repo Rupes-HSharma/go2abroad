@@ -136,16 +136,23 @@
             tl.from(image, { xPercent: 100, duration: 1, delay: -1, scale: 1, ease: "power2.out" });
         });
 
-        ['.sis-text-anime-style-1', '.sis-text-anime-style-3'].forEach(selector => {
-            document.querySelectorAll(selector).forEach(element => {
-                const split = new SplitText(element, { type: selector === '.sis-text-anime-style-1' ? "chars, words" : "chars, words" });
-                gsap.from(selector === '.sis-text-anime-style-1' ? split.words : split.chars, {
-                    duration: 1, delay: selector === '.sis-text-anime-style-1' ? 0.5 : 0.2, x: selector === '.sis-text-anime-style-1' ? 20 : 40,
-                    autoAlpha: 0, stagger: selector === '.sis-text-anime-style-1' ? 0.05 : 0.03, ease: "power2.out",
-                    scrollTrigger: { trigger: element, start: "top 85%" }
-                });
-            });
-        });
+              document.querySelectorAll('.sis-text-anime-style-1').forEach(element => {
+    const split = new SplitText(element, { type: "words" });
+    gsap.from(split.words, {
+        duration: 0.8, delay: 0.3, x: 10,
+        autoAlpha: 0, stagger: 0.04, ease: "sine.out",
+        scrollTrigger: { trigger: element, start: "top 85%" }
+    });
+});
+
+document.querySelectorAll('.sis-text-anime-style-3').forEach(element => {
+    const split = new SplitText(element, { type: "words" });
+    gsap.from(split.words, {
+        duration: 0.7, delay: 0.15, x: 10,
+        autoAlpha: 0, stagger: 0.04, ease: "sine.out",
+        scrollTrigger: { trigger: element, start: "top 85%" }
+    });
+});
     }
 
     // Animation On Scroll Js
@@ -568,9 +575,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-(function(){
+   (function(){
   var wrap = document.querySelector('.sis-journey-wrap');
   var path = document.getElementById('sis-journey-path');
+  var items = document.querySelectorAll('.sis-step-item');
   if(!wrap || !path) return;
 
   var len = path.getTotalLength();
@@ -581,12 +589,100 @@ document.addEventListener("DOMContentLoaded", function () {
     entries.forEach(function(entry){
       if(entry.isIntersecting){
         wrap.classList.add('in-view');
-      } else {
-        wrap.classList.remove('in-view');
+
+        items.forEach(function(item, index){
+          var icon = item.querySelector('.sis-step-icon');
+          if(!icon) return;
+          icon.style.animationDelay = (index * 0.5) + 's';
+          icon.classList.add('sis-pulse-loop'); // hamesha chalega, ruke ga nahi
+        });
+
+        observer.unobserve(wrap); // reveal (fade-up + wave draw) sirf ek baar hoga, blink hamesha chalta rahega
       }
     });
   }, { threshold: 0.25 });
 
   observer.observe(wrap);
 })();
- 
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Team card click
+    document.addEventListener("click", function (e) {
+
+        const teamCard = e.target.closest(".sisf-sis-team-member");
+
+        if (!teamCard) return;
+
+        // Sirf Team section ke card par work kare
+        if (!teamCard.closest(".sis-team-member-section")) return;
+
+        // Social icon click par modal open nahi hoga
+        if (e.target.closest(".sisf-m-social-icons")) return;
+
+        e.preventDefault();
+
+        const modal = document.getElementById("teamProfileModal");
+
+        if (!modal) {
+            console.error("teamProfileModal not found");
+            return;
+        }
+
+        // Modal open
+        modal.classList.add("active");
+        document.body.classList.add("team-modal-open");
+
+    });
+
+
+    // Close button
+    document.addEventListener("click", function (e) {
+
+        if (e.target.closest("#teamModalClose")) {
+
+            const modal = document.getElementById("teamProfileModal");
+
+            modal.classList.remove("active");
+            document.body.classList.remove("team-modal-open");
+        }
+
+    });
+
+
+    // Overlay click close
+    document.addEventListener("click", function (e) {
+
+        if (e.target.classList.contains("team-modal-overlay")) {
+
+            const modal = document.getElementById("teamProfileModal");
+
+            modal.classList.remove("active");
+            document.body.classList.remove("team-modal-open");
+        }
+
+    });
+
+
+    // ESC key close
+    document.addEventListener("keydown", function (e) {
+
+        if (e.key === "Escape") {
+
+            const modal = document.getElementById("teamProfileModal");
+
+            if (modal) {
+                modal.classList.remove("active");
+                document.body.classList.remove("team-modal-open");
+            }
+
+        }
+
+    });
+
+});
+
+
+
